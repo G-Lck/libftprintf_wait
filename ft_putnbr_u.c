@@ -1,25 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_u.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: glucken <glucken@ent.42lausanne.ch>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/02 15:57:35 by glucken           #+#    #+#             */
-/*   Updated: 2025/10/03 14:04:21 by glucken          ###   ########.fr       */
+/*   Created: 2025/10/03 10:49:20 by glucken           #+#    #+#             */
+/*   Updated: 2025/10/03 15:04:08 by glucken          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./libftprintf.h"
 
-int ft_printf(unsigned char* str, ...)
+int	ft_putnbr_u(unsigned int n, int size)
 {
-    va_list args;
-    int size;
-    va_start(args, str);
-    size = 0;
-    size+= parseur(str, &args);
-    va_end(args);
-    return(size);
+	if (n == 0)
+	{
+		size+= ft_putchar('0');
+		return (size + 1) ;
+	}
+	if (n >= 10)
+		size+= ft_putnbr_u(n / 10, size);
+	size+= ft_putchar('0' + n % 10);
+	return (size);
 }
-

@@ -1,29 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_printarg.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: glucken <glucken@ent.42lausanne.ch>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/02 16:35:43 by glucken           #+#    #+#             */
-/*   Updated: 2025/10/03 13:53:02 by glucken          ###   ########.fr       */
+/*   Created: 2025/10/02 16:27:19 by glucken           #+#    #+#             */
+/*   Updated: 2025/10/03 15:08:19 by glucken          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./libftprintf.h"
 
-int    ft_putstr(char* s)
+int ft_printarg(char c, va_list *args)
 {
-    int i;
     int size;
-
+    
     size = 0;
-    i = 0;
-    while(s[i])
-    {
-        ft_putchar(s[i]);
-        i++;
-        size++;
-    }
+    if (c == '%')
+        size+= ft_putchar('%');
+    if (c == 'c')
+        size+= ft_putchar(va_arg(*args, int));
+    if (c == 's')
+        size+= ft_putstr(va_arg(*args, char*));
+    if (c == 'd')
+        size+= ft_putnbr(va_arg(*args, int), 0);
+    if (c == 'u')
+        size+= ft_putnbr_u(va_arg(*args, unsigned int), 0);
+    if (c == 'x')
+        size+= ft_putnbr_hexa(va_arg(*args, unsigned int), 1, 0);
     return (size);
 }

@@ -1,25 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   is_in.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: glucken <glucken@ent.42lausanne.ch>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/02 15:57:35 by glucken           #+#    #+#             */
-/*   Updated: 2025/10/03 14:04:21 by glucken          ###   ########.fr       */
+/*   Created: 2025/10/02 16:27:19 by glucken           #+#    #+#             */
+/*   Updated: 2025/10/03 13:10:54 by glucken          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./libftprintf.h"
 
-int ft_printf(unsigned char* str, ...)
+int is_in(char c, char* set)
 {
-    va_list args;
-    int size;
-    va_start(args, str);
-    size = 0;
-    size+= parseur(str, &args);
-    va_end(args);
-    return(size);
+    int i;
+    i = 0;
+    while (set[i])
+    {
+        if (set[i] == c)
+            return (1);
+        i++;
+    }
+    return (0);
 }
-

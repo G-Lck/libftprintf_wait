@@ -6,13 +6,14 @@
 /*   By: glucken <glucken@ent.42lausanne.ch>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 16:34:05 by glucken           #+#    #+#             */
-/*   Updated: 2025/10/02 16:43:45 by glucken          ###   ########.fr       */
+/*   Updated: 2025/10/03 13:52:13 by glucken          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./libftprintf.h"
 
-void    ft_putchar(char c)
+int    ft_putchar(char c)
 {
     write(1, &c, 1);
+    return (1);
 }

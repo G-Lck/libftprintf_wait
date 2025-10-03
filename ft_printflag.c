@@ -1,25 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_printflag.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: glucken <glucken@ent.42lausanne.ch>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/02 15:57:35 by glucken           #+#    #+#             */
-/*   Updated: 2025/10/03 14:04:21 by glucken          ###   ########.fr       */
+/*   Created: 2025/10/02 16:27:19 by glucken           #+#    #+#             */
+/*   Updated: 2025/10/03 13:16:17 by glucken          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./libftprintf.h"
 
-int ft_printf(unsigned char* str, ...)
+int ft_printflag(char c)
 {
-    va_list args;
-    int size;
-    va_start(args, str);
-    size = 0;
-    size+= parseur(str, &args);
-    va_end(args);
-    return(size);
+    ft_putchar(c);
+    return (0);
 }
-

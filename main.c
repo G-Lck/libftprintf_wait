@@ -14,5 +14,8 @@
 
 int main()
 {
-    ft_printf((unsigned char* )"salut", "toi", "et");
+    int res;
+
+    res = ft_printf((unsigned char* )"%x", 17000);
+    printf("\nWith the value: %d\n", res);
 }
