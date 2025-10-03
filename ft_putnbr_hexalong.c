@@ -1,38 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_hexalong.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: glucken <glucken@ent.42lausanne.ch>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/03 10:49:20 by glucken           #+#    #+#             */
-/*   Updated: 2025/10/03 15:34:18 by glucken          ###   ########.fr       */
+/*   Updated: 2025/10/03 16:31:53 by glucken          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./libftprintf.h"
 
-int	ft_putnbr(int n, int size)
+static int    ft_printhexabase(int n, int lower)
 {
-	
-	if (n == 0)
+    char    *lower_base;
+    char    *upper_base;
+
+    lower_base = "0123456789abcdef";
+    upper_base = "0123456789ABCDEF";
+
+    if (lower)
+    	ft_putchar(lower_base[n]);
+    else
+	{
+    	ft_putchar(upper_base[n]);
+	}
+	return (1);
+}
+
+int	ft_putnbr_hexalong(long int x, int lower, int size)
+{
+	if (x == 0)
 	{
 		size+= ft_putchar('0');
 		return (size) ;
 	}
-	if (n == -2147483648)
-	{
-		ft_putstr("-2147483648");
-		return (11) ;
-	}
-	if (n < 0)
-	{
-		ft_putchar('-');
-		n = -n;
-		size++;
-	}
-	if (n >= 10)
-		size+= ft_putnbr(n / 10, size);
-	size+= ft_putchar('0' + n % 10);
+	if (x >= 16)
+		size+= ft_putnbr_hexa(x / 16, lower, size);
+	size+= ft_printhexabase(x % 16, lower);
 	return (size);
 }

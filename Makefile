@@ -5,12 +5,13 @@ SRCS = ft_printarg.c \
 	ft_printnext.c \
 	ft_putchar.c \
 	ft_putnbr_hexa.c \
+	ft_putnbr_hexalong.c \
 	ft_putnbr_u.c \
 	ft_putnbr.c \
+	ft_putptr.c \
 	ft_putstr.c \
 	is_in.c \
-	parseur.c \
-	main.c 
+	parseur.c
 
 
 OBJS = ${SRCS:.c=.o}

@@ -6,7 +6,7 @@
 /*   By: glucken <glucken@ent.42lausanne.ch>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 16:27:19 by glucken           #+#    #+#             */
-/*   Updated: 2025/10/03 15:08:19 by glucken          ###   ########.fr       */
+/*   Updated: 2025/10/03 16:31:24 by glucken          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,7 @@ int ft_printarg(char c, va_list *args)
         size+= ft_putnbr_u(va_arg(*args, unsigned int), 0);
     if (c == 'x')
         size+= ft_putnbr_hexa(va_arg(*args, unsigned int), 1, 0);
+    if (c == 'p')
+        size+= ft_putptr(va_arg(*args, long int));
     return (size);
 }

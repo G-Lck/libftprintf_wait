@@ -6,13 +6,13 @@
 /*   By: glucken <glucken@ent.42lausanne.ch>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/03 10:49:20 by glucken           #+#    #+#             */
-/*   Updated: 2025/10/03 15:14:50 by glucken          ###   ########.fr       */
+/*   Updated: 2025/10/03 16:32:03 by glucken          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./libftprintf.h"
 
-int    ft_printhexabase(int n, int lower)
+static int    ft_printhexabase(int n, int lower)
 {
     char    *lower_base;
     char    *upper_base;

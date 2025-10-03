@@ -6,7 +6,7 @@
 /*   By: glucken <glucken@ent.42lausanne.ch>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 16:37:54 by glucken           #+#    #+#             */
-/*   Updated: 2025/10/03 14:59:31 by glucken          ###   ########.fr       */
+/*   Updated: 2025/10/03 16:31:38 by glucken          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,10 @@ int     ft_printnext(unsigned char* str, va_list *args);
 int     ft_putchar(char c);
 int     ft_putstr(char* s);
 int     ft_putnbr_hexa(int x, int lower, int size);
+int     ft_putnbr_hexalong(long int x, int lower, int size);
 int     ft_putnbr_u(unsigned int n, int size);
 int 	ft_putnbr(int n, int size);
+int     ft_putptr(long int ptr);
 int     is_in(char c, char* set);
 int     parseur(unsigned char *str, va_list *args);
 int		main(void);
