@@ -20,27 +20,20 @@ CC = gcc
 RM = rm -f
 CFLAGS = -Wall -Wextra -Werror
 
-# 🔹 Ajout : fichier(s) de test (par ex. main.c)
-TEST_SRCS = main.c
-TEST_OBJS = ${TEST_SRCS:.c=.o}
-TEST_EXE = test   # 🔹 Nom de l'exécutable
 
 .c.o :
 	${CC} ${CFLAGS} -c $< -o $(<:.c=.o)
 
-all : ${NAME} ${TEST_EXE}   # 🔹 Ajout de l'exécutable à la cible all
+all : ${NAME}
 
 ${NAME} : ${OBJS}
 	ar rc ${NAME} ${OBJS}
 
-# 🔹 Nouvelle règle pour compiler l'exécutable test
-${TEST_EXE}: ${NAME} ${TEST_OBJS}
-	${CC} ${CFLAGS} -o ${TEST_EXE} ${TEST_OBJS} -L. -lftprintf
 
 clean:
-	${RM} ${OBJS} ${TEST_OBJS}   # 🔹 Ajout du nettoyage des objets de test
+	${RM} ${OBJS}
 
 fclean: clean
-	${RM} ${NAME} ${TEST_EXE}   # 🔹 Ajout du nettoyage de l'exécutable
+	${RM} ${NAME}
 
 re: fclean all

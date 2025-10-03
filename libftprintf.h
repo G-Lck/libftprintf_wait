@@ -6,7 +6,7 @@
 /*   By: glucken <glucken@ent.42lausanne.ch>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 16:37:54 by glucken           #+#    #+#             */
-/*   Updated: 2025/10/03 16:31:38 by glucken          ###   ########.fr       */
+/*   Updated: 2025/10/03 16:54:09 by glucken          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,5 @@ int 	ft_putnbr(int n, int size);
 int     ft_putptr(long int ptr);
 int     is_in(char c, char* set);
 int     parseur(unsigned char *str, va_list *args);
-int		main(void);
 
 #endif
