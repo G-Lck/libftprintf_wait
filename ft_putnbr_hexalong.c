@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_hexalong.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: glucken <glucken@ent.42lausanne.ch>        +#+  +:+       +#+        */
+/*   By: glucken <glucken@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/03 10:49:20 by glucken           #+#    #+#             */
-/*   Updated: 2025/10/03 16:31:53 by glucken          ###   ########.fr       */
+/*   Updated: 2025/10/04 19:39:23 by glucken          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ static int    ft_printhexabase(int n, int lower)
 	return (1);
 }
 
-int	ft_putnbr_hexalong(long int x, int lower, int size)
+int	ft_putnbr_hexalong(unsigned int x, int lower, int size)
 {
 	if (x == 0)
 	{
@@ -37,7 +37,7 @@ int	ft_putnbr_hexalong(long int x, int lower, int size)
 		return (size) ;
 	}
 	if (x >= 16)
-		size+= ft_putnbr_hexa(x / 16, lower, size);
+		size = ft_putnbr_hexa(x / 16, lower, size);
 	size+= ft_printhexabase(x % 16, lower);
 	return (size);
 }

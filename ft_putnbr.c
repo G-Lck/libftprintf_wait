@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: glucken <glucken@ent.42lausanne.ch>        +#+  +:+       +#+        */
+/*   By: glucken <glucken@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/03 10:49:20 by glucken           #+#    #+#             */
-/*   Updated: 2025/10/03 15:34:18 by glucken          ###   ########.fr       */
+/*   Updated: 2025/10/04 19:03:33 by glucken          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_putnbr(int n, int size)
 {
-	
+
 	if (n == 0)
 	{
 		size+= ft_putchar('0');
@@ -27,12 +27,11 @@ int	ft_putnbr(int n, int size)
 	}
 	if (n < 0)
 	{
-		ft_putchar('-');
+		size+= ft_putchar('-');
 		n = -n;
-		size++;
 	}
 	if (n >= 10)
-		size+= ft_putnbr(n / 10, size);
+		size = ft_putnbr(n / 10, size);
 	size+= ft_putchar('0' + n % 10);
 	return (size);
 }
