@@ -3,20 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printnext.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: glucken <glucken@ent.42lausanne.ch>        +#+  +:+       +#+        */
+/*   By: glucken <glucken@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 16:27:19 by glucken           #+#    #+#             */
-/*   Updated: 2025/10/03 14:07:21 by glucken          ###   ########.fr       */
+/*   Updated: 2025/10/04 17:46:34 by glucken          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./libftprintf.h"
 
-int ft_printnext(unsigned char* str, va_list *args)
+int ft_printnext(const char* str, va_list *args)
 {
     int size;
     int i;
-    
+
     i = 0;
     size = 0;
     if (is_in(str[i], "# -"))

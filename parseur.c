@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   parseur.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: glucken <glucken@ent.42lausanne.ch>        +#+  +:+       +#+        */
+/*   By: glucken <glucken@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 16:27:19 by glucken           #+#    #+#             */
-/*   Updated: 2025/10/03 16:33:33 by glucken          ###   ########.fr       */
+/*   Updated: 2025/10/04 17:47:24 by glucken          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./libftprintf.h"
 
-int parseur(unsigned char *str, va_list *args)
+int parseur(const char *str, va_list *args)
 {
 
     int i;
