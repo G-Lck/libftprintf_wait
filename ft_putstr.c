@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: glucken <glucken@ent.42lausanne.ch>        +#+  +:+       +#+        */
+/*   By: glucken <glucken@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 16:35:43 by glucken           #+#    #+#             */
-/*   Updated: 2025/10/03 13:53:02 by glucken          ###   ########.fr       */
+/*   Updated: 2025/10/08 22:32:27 by glucken          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,10 @@ int    ft_putstr(char* s)
     int i;
     int size;
 
+    if (!s)
+    {
+        return(ft_putstr("(null)"));
+    }
     size = 0;
     i = 0;
     while(s[i])

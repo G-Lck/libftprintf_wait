@@ -6,7 +6,7 @@
 /*   By: glucken <glucken@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/03 10:49:20 by glucken           #+#    #+#             */
-/*   Updated: 2025/10/04 19:39:23 by glucken          ###   ########.fr       */
+/*   Updated: 2025/10/08 22:27:10 by glucken          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,15 +29,10 @@ static int    ft_printhexabase(int n, int lower)
 	return (1);
 }
 
-int	ft_putnbr_hexalong(unsigned int x, int lower, int size)
+int	ft_putnbr_hexalong(long long unsigned int x, int lower, int size)
 {
-	if (x == 0)
-	{
-		size+= ft_putchar('0');
-		return (size) ;
-	}
 	if (x >= 16)
-		size = ft_putnbr_hexa(x / 16, lower, size);
+		size = ft_putnbr_hexalong(x / 16, lower, size);
 	size+= ft_printhexabase(x % 16, lower);
 	return (size);
 }
