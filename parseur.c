@@ -6,7 +6,7 @@
 /*   By: glucken <glucken@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 16:27:19 by glucken           #+#    #+#             */
-/*   Updated: 2025/10/04 17:47:24 by glucken          ###   ########.fr       */
+/*   Updated: 2025/10/11 14:25:49 by glucken          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,29 +14,30 @@
 
 int parseur(const char *str, va_list *args)
 {
-
     int i;
     int size;
+    int flag;
 
     i = 0;
     size = 0;
+    flag = 0;
     while (str[i] != 0)
     {
         if (str[i] == '%')
         {
-            if (str[i + 1] != 0 && is_in(str[i + 1], "cdipsuxX%%# -"))
+            if (str[i + 1] != 0 && is_in(str[i + 1], "# +"))
             {
-                size+= ft_printnext(str + i + 1, args);
-                i = i + 2;
+                flag = str[i++ + 1];
             }
-
+            if (str[i + 1] != 0 && is_in(str[i + 1], "cspdiuxX%"))
+            {
+                size+= ft_printarg(str[i + 1], args, flag);
+                i++;
+            }
         }
         else
-        {
             size+= ft_putchar(str[i]);
-            i++;
-        }
-
+        i++;
     }
     return(size);
 }

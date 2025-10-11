@@ -6,15 +6,20 @@
 /*   By: glucken <glucken@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/03 10:49:20 by glucken           #+#    #+#             */
-/*   Updated: 2025/10/04 19:03:33 by glucken          ###   ########.fr       */
+/*   Updated: 2025/10/11 13:54:33 by glucken          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./libftprintf.h"
 
-int	ft_putnbr(int n, int size)
+int	ft_putnbr(int n, int size, int flag)
 {
 
+	if (n > 0 && (flag == '+' || flag == ' '))
+	{
+		size+= ft_putchar(flag);
+		flag = 0;
+	}
 	if (n == 0)
 	{
 		size+= ft_putchar('0');
@@ -31,7 +36,7 @@ int	ft_putnbr(int n, int size)
 		n = -n;
 	}
 	if (n >= 10)
-		size = ft_putnbr(n / 10, size);
+		size = ft_putnbr(n / 10, size, flag);
 	size+= ft_putchar('0' + n % 10);
 	return (size);
 }
