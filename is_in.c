@@ -12,15 +12,16 @@
 
 #include "./libftprintf.h"
 
-int is_in(char c, char* set)
+int	is_in(char c, char *set)
 {
-    int i;
-    i = 0;
-    while (set[i])
-    {
-        if (set[i] == c)
-            return (1);
-        i++;
-    }
-    return (0);
+	int	i;
+
+	i = 0;
+	while (set[i])
+	{
+		if (set[i] == c)
+			return (1);
+		i++;
+	}
+	return (0);
 }

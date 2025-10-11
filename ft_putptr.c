@@ -12,15 +12,15 @@
 
 #include "./libftprintf.h"
 
-int ft_putptr(long long unsigned int ptr)
+int	ft_putptr(long long unsigned int ptr)
 {
-    int size;
+	int	size;
 
-    if (!ptr)
-    {
-        return(ft_putstr("(nil)"));
-    }
-    ft_putstr("0x");
-    size = ft_putnbr_hexalong(ptr, 1, 2);
-    return (size);
+	if (!ptr)
+	{
+		return (ft_putstr("(nil)"));
+	}
+	ft_putstr("0x");
+	size = ft_putnbr_hexalong(ptr, 1, 2);
+	return (size);
 }

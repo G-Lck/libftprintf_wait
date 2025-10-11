@@ -12,28 +12,28 @@
 
 #include "./libftprintf.h"
 
-int ft_printarg(const char c, va_list *args, int flag)
+int	ft_printarg(const char c, va_list *args, int flag)
 {
-	int size;
+	int	size;
 
 	size = 0;
 	if (c == '%')
-		size+= ft_putchar('%');
+		size += ft_putchar('%');
 	if (c == 'c')
-		size+= ft_putchar(va_arg(*args, int));
+		size += ft_putchar(va_arg(*args, int));
 	if (c == 'd')
-		size+= ft_putnbr(va_arg(*args, int), 0, flag);
+		size += ft_putnbr(va_arg(*args, int), 0, flag);
 	if (c == 'i')
-		size+= ft_putnbr(va_arg(*args, int), 0, flag);
+		size += ft_putnbr(va_arg(*args, int), 0, flag);
 	if (c == 'p')
-		size+= ft_putptr(va_arg(*args, long long unsigned int));
+		size += ft_putptr(va_arg(*args, long long unsigned int));
 	if (c == 's')
-		size+= ft_putstr(va_arg(*args, char*));
+		size += ft_putstr(va_arg(*args, char *));
 	if (c == 'u')
-		size+= ft_putnbr_u(va_arg(*args, unsigned int), 0);
+		size += ft_putnbr_u(va_arg(*args, unsigned int), 0);
 	if (c == 'x')
-		size+= ft_putnbr_hexa(va_arg(*args, unsigned int), 1, 0, flag);
+		size += ft_putnbr_hexa(va_arg(*args, unsigned int), 1, 0, flag);
 	if (c == 'X')
-		size+= ft_putnbr_hexa(va_arg(*args, unsigned int), 0, 0, flag);
+		size += ft_putnbr_hexa(va_arg(*args, unsigned int), 0, 0, flag);
 	return (size);
 }

@@ -1,7 +1,6 @@
 NAME = libftprintf.a
 SRCS = ft_printarg.c \
 	ft_printf.c \
-	ft_printflag.c \
 	ft_putchar.c \
 	ft_putnbr_hexa.c \
 	ft_putnbr_hexalong.c \

@@ -12,20 +12,17 @@
 
 #include "./libftprintf.h"
 
-static int    ft_printhexabase(int n, int lower)
+static int	ft_printhexabase(int n, int lower)
 {
-    char    *lower_base;
-    char    *upper_base;
+	char	*lower_base;
+	char	*upper_base;
 
-    lower_base = "0123456789abcdef";
-    upper_base = "0123456789ABCDEF";
-
-    if (lower)
-    	ft_putchar(lower_base[n]);
-    else
-	{
-    	ft_putchar(upper_base[n]);
-	}
+	lower_base = "0123456789abcdef";
+	upper_base = "0123456789ABCDEF";
+	if (lower)
+		ft_putchar(lower_base[n]);
+	else
+		ft_putchar(upper_base[n]);
 	return (1);
 }
 
@@ -33,6 +30,6 @@ int	ft_putnbr_hexalong(long long unsigned int x, int lower, int size)
 {
 	if (x >= 16)
 		size = ft_putnbr_hexalong(x / 16, lower, size);
-	size+= ft_printhexabase(x % 16, lower);
+	size += ft_printhexabase(x % 16, lower);
 	return (size);
 }

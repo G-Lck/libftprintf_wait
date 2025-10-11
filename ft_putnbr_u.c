@@ -16,11 +16,11 @@ int	ft_putnbr_u(unsigned int n, int size)
 {
 	if (n == 0)
 	{
-		size+= ft_putchar('0');
-		return (size) ;
+		size += ft_putchar('0');
+		return (size);
 	}
 	if (n >= 10)
 		size = ft_putnbr_u(n / 10, size);
-	size+= ft_putchar('0' + n % 10);
+	size += ft_putchar('0' + n % 10);
 	return (size);
 }
