@@ -6,11 +6,11 @@
 /*   By: glucken <glucken@ent.42lausanne.ch>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 16:27:19 by glucken           #+#    #+#             */
-/*   Updated: 2025/10/03 13:10:54 by glucken          ###   ########.fr       */
+/*   Updated: 2025/10/12 13:09:54 by glucken          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./libftprintf.h"
+#include "./ft_printf.h"
 
 int	is_in(char c, char *set)
 {

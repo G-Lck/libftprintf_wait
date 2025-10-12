@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: glucken <glucken@student.42lausanne.ch>    +#+  +:+       +#+        */
+/*   By: glucken <glucken@ent.42lausanne.ch>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 16:35:43 by glucken           #+#    #+#             */
-/*   Updated: 2025/10/08 22:32:27 by glucken          ###   ########.fr       */
+/*   Updated: 2025/10/12 13:09:48 by glucken          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./libftprintf.h"
+#include "./ft_printf.h"
 
 int	ft_putstr(char *s)
 {

@@ -1,4 +1,5 @@
 NAME = libftprintf.a
+
 SRCS = ft_printarg.c \
 	ft_printf.c \
 	ft_putchar.c \
